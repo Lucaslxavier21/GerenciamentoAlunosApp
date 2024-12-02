@@ -1,4 +1,4 @@
-# AlunosAPP
+# Gerenciamento de Alunos
 
 Este é um projeto de gerenciamento de alunos, onde você pode visualizar, adicionar e gerenciar informações de alunos.
 
