@@ -1,0 +1,100 @@
+﻿@page
+@model GerenciamentoAlunosWebUI.Pages.TurmaModel
+@{
+    ViewData["Title"] = "Lista de Turmas";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Lista de Turmas</h1>
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary" id="btnAbrirModalCadastro" data-bs-toggle="modal" data-bs-target="#cadastrarTurmaModal">
+            Cadastrar Nova Turma
+        </button>
+    </div>
+    <table class="table table-striped table-bordered mt-4">
+    <thead>
+        <tr>
+            <th>Turma</th>
+            <th>Curso</th>
+            <th>Ano</th>
+            <th>Ações</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Turmas != null && Model.Turmas.Any())
+        {
+            foreach (var turma in Model.Turmas)
+            {
+                <tr>
+                    <td>@turma.Turma</td>
+                    <td>@turma.CursoId</td>
+                    <td>@turma.Ano</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="abrirModalEditarTurma(@turma.Id)">Editar</button>
+                        @if (turma.Ativo)
+                        {
+                            <button class="btn btn-danger btn-sm" onclick="alternarStatus(@turma.Id, false)">Desativar</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-success btn-sm" onclick="alternarStatus(@turma.Id, true)">Ativar</button>
+                        }
+                    </td>
+                    <td>
+                        @if (turma.Ativo)
+                        {
+                            <span>Ativo</span>
+                        }
+                        else
+                        {
+                            <span>Desativado</span>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+</div>
+
+<div class="modal fade" id="cadastrarTurmaModal" tabindex="-1" aria-labelledby="cadastrarTurmaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCadastroTurma">
+                    <div class="mb-3">
+                        <label for="turma" class="form-label">Turma</label>
+                        <input type="text" id="turma" class="form-control" placeholder="Digite o nome da turma" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="curso" class="form-label">Curso</label>
+                        <input type="number" id="curso" class="form-control" placeholder="Selecione um curso" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ano" class="form-label">Ano</label>
+                        <input type="number" id="ano" class="form-control" placeholder="Digite o ano da turma" required>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="ativo" checked>
+                        <label for="ativo" class="form-check-label">Ativo</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="btnSalvarTurma">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/turma.js" asp-append-version="true"></script>

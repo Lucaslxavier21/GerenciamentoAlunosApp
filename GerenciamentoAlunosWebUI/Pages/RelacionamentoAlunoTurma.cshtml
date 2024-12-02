@@ -1,0 +1,103 @@
+﻿@page
+@model GerenciamentoAlunosWebUI.Pages.RelacionamentoAlunoTurmaModel
+@{
+    ViewData["Title"] = "Relacionamento de Turmas";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Relacionamento de Turmas/Alunos</h1>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary" id="btnAbrirModalCadastro" data-bs-toggle="modal" data-bs-target="#relacionarTurmaAlunoModal">
+            Criar Relacionamento
+        </button>
+    </div>
+
+    <table class="table table-striped table-bordered mt-4">
+    <thead>
+        <tr>
+            <th>Aluno</th>
+            <th>Turma</th>
+            <th>Ações</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.AlunoTurma != null && Model.AlunoTurma.Any())
+        {
+            foreach (var item in Model.AlunoTurma)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Turma</td>                    
+                    <td>
+                        @if (item.Ativo)
+                        {
+                            <button class="btn btn-warning btn-sm" onclick="abrirModalEditarRelacionamento(@item.Id)">Editar</button>
+                            <button class="btn btn-danger btn-sm" id="status" onclick="alternarStatus(@item.Id, false)">Desativar</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-warning btn-sm" onclick="abrirModalEditarRelacionamento(@item.Id)">Editar</button>
+                            <button class="btn btn-success btn-sm" id="status" onclick="alternarStatus(@item.Id, true)">Ativar</button>
+                        }
+                    </td>
+                    <td>
+                        @if (item.Ativo)
+                        {
+                            <span>Ativo</span>
+                        }
+                        else
+                        {
+                            <span>Desativado</span>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+</div>
+
+<div class="modal fade" id="relacionarTurmaAlunoModal" tabindex="-1" aria-labelledby="relacionarTurmaAlunoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formRelacionarTurmaAluno">
+                    <div class="mb-3">
+                        <label for="aluno" class="form-label">Aluno</label>
+                        <select id="aluno" class="form-select" required>
+                            <option value="" disabled selected>Selecione um aluno</option>
+                            @foreach (var aluno in Model.ListaDeAlunos)
+                            {
+                                <option value="@aluno.Id">@aluno.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="turma" class="form-label">Turma</label>
+                        <select id="turma" class="form-select" required>
+                            <option value="" disabled selected>Selecione uma turma</option>
+                            @foreach (var turma in Model.ListaDeTurmas)
+                            {
+                                <option value="@turma.Id">@turma.Turma</option>
+                            }
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="btnSalvarRelacionamento">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/relacionamento.js" asp-append-version="true"></script>

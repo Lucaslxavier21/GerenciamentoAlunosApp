@@ -1,0 +1,316 @@
+[
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoController",
+    "Method": "AdicionarAluno",
+    "RelativePath": "api/Aluno/AdicionarAluno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "aluno",
+        "Type": "GestaoDeAlunosApi.Models.AlunoRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoController",
+    "Method": "AlterarStatus",
+    "RelativePath": "api/Aluno/AlterarStatus/{id}/{status}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoController",
+    "Method": "AtualizarAluno",
+    "RelativePath": "api/Aluno/AtualizarAluno/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "aluno",
+        "Type": "GestaoDeAlunosApi.Models.AlunoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoController",
+    "Method": "BuscarAlunoPorId",
+    "RelativePath": "api/Aluno/BuscarAlunoPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoController",
+    "Method": "ListarAlunos",
+    "RelativePath": "api/Aluno/ListarAlunos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "AlterarStatus",
+    "RelativePath": "api/AlunoTurma/AlterarStatus/{id}/{status}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "AtualizarRelacionamento",
+    "RelativePath": "api/AlunoTurma/AtualizarRelacionamento/{id}/{alunoId}/{turmaId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "alunoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "BuscarAluno",
+    "RelativePath": "api/AlunoTurma/BuscarAluno/{alunoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "BuscarTurma",
+    "RelativePath": "api/AlunoTurma/BuscarTurma/{turmaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "CriarRelacionamento",
+    "RelativePath": "api/AlunoTurma/CriarRelacionamento/{alunoId}/{turmaId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "ListarAlunos",
+    "RelativePath": "api/AlunoTurma/ListarAlunos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "Listar",
+    "RelativePath": "api/AlunoTurma/ListarRelacionamentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "ListarTurmas",
+    "RelativePath": "api/AlunoTurma/ListarTurmas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.AlunoTurmaController",
+    "Method": "ObterRelacionamentoPorId",
+    "RelativePath": "api/AlunoTurma/ObterRelacionamentoPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.TurmaController",
+    "Method": "AdicionarTurma",
+    "RelativePath": "api/Turma/AdicionarTurma",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GestaoDeAlunosApi.Models.TurmaModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.TurmaController",
+    "Method": "AlterarStatus",
+    "RelativePath": "api/Turma/AlterarStatus/{id}/{status}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.TurmaController",
+    "Method": "AtualizarTurma",
+    "RelativePath": "api/Turma/AtualizarTurma/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "GestaoDeAlunosApi.Models.TurmaModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.TurmaController",
+    "Method": "BuscarTurmaPorId",
+    "RelativePath": "api/Turma/BuscarTurmaPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoDeAlunosApi.Controllers.TurmaController",
+    "Method": "ListarTurmas",
+    "RelativePath": "api/Turma/ListarTurmas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
