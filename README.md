@@ -44,3 +44,12 @@ Certifique-se de ajustar a `ConnectionString` no arquivo `appsettings.json`, con
   "DefaultConnection": "Data Source=.;Initial Catalog=AlunosAPP;Integrated Security=True;Encrypt=False"
 }
 ```
+
+## Acessos
+
+### Documentação da API (Swagger)
+[https://localhost:7003/swagger/index.html](https://localhost:7003/swagger/index.html)
+
+### Interface Web
+[https://localhost:7003/ListaDeAlunos](https://localhost:7003/ListaDeAlunos)
+
