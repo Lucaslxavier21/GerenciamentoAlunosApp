@@ -11,14 +11,11 @@ O projeto consiste em duas partes principais:
 
 ## Configuração do Projeto:
 ```json
-  - Versão do .NET => 8.0
-  - O projeto está separado em 3 camadas, Data ( onde contém repositórios, interfaces, models e serviços ), WebUI ( interface do projeto e API ) e Camada de testes.
-  - Pacotes necessários: Dapper (ORM), Microsoft.Data.SqlClient. ( Intalar os pacotes na camada de Data )
-
-## Configuração do Banco de Dados
-
+  1. **Versão do .NET => 8.0**
+  2. **O projeto está separado em 3 camadas, Data ( onde contém repositórios, interfaces, models e serviços ), WebUI ( interface do projeto e API ) e Camada de testes.**
+  3. **Pacotes necessários: Dapper (ORM), Microsoft.Data.SqlClient. ( Intalar os pacotes na camada de Data ).**
+  4. **Config do banco de dados e connection string**:
 A `ConnectionString` para o banco de dados está configurada no arquivo `appsettings.json` do projeto, conforme abaixo:
-
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Data Source=.;Initial Catalog=AlunosAPP;Integrated Security=True;Encrypt=False"
